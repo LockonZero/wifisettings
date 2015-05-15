@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="gr.netsteps.plugins.wifisettings" version="1.0.0">
+        <name>Wifi Settings</name>
+        <description>Display the wifi settings page</description>
+        <license>Apache 2.0</license>
+        <keywords>wifi, settings, cordova</keywords>
+
+        <js-module src="www/WifiSettings.js" name="WifiSettings">
+            <clobbers target="window.plugins.WifiSettings" />
+        </js-module>
+
+        <platform name="android">
+            <config-file target="res/xml/config.xml" parent="/*">
+                <feature name="WifiSettings" >
+                    <param name="android-package" value="gr.netsteps.plugins.WifiSettings"/>
+                </feature>
+            </config-file>
+
+            <source-file src="src/android/gr/netsteps/plugins/WifiSettings.java" target-dir="src/gr/netsteps/plugins/" />
+        </platform>
+    </plugin>
